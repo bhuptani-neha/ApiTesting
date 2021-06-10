@@ -4,6 +4,8 @@ import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.testng.Assert;
+import static org.testng.Assert.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -60,13 +62,10 @@ public class Module5HomeTask2 {
                 assertThat().contentType("application/json").
                 body("name",equalTo("Hyderabad")).
                 body("sys.country",equalTo("IN")).
-                //body("main.temp_min",equalTo(301.38)).
-                //body("main.temp",greaterThan(0)).
+                body("main.temp_min",greaterThan(Float.parseFloat(""+0))).
+                body("main.temp",greaterThan(Float.parseFloat(""+0))).
                 extract().response();
-    System.out.println("Response- "+response.asString());
-    System.out.println("res- "+response.body().path("main.temp_min"));
-
-
+                System.out.println("Response- "+response.asString());
     }
 
 }
