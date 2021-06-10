@@ -57,7 +57,7 @@ public class Module4HomeTask {
     }
 
 
-    //Get Method is for exisiting date as API is not storing post data
+    //Get Method is for existing data as API is not storing post data
     @Test
     public void employeeGet(){
          when().
